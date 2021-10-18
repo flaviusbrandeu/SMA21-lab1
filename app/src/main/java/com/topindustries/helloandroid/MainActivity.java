@@ -2,7 +2,10 @@ package com.topindustries.helloandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ComponentName;
+import android.content.Intent;
 import android.content.res.TypedArray;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,6 +15,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -48,6 +53,33 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 tName.setText("Hello, " + userName);
                 GreetingsDialog greetingsDialog = new GreetingsDialog(userName);
                 greetingsDialog.show(getSupportFragmentManager(), "missiles");
+                break;
+            case R.id.bShare:
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, eName.getText().toString());
+                sendIntent.setType("text/plain");
+                if (sendIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(sendIntent);
+                }
+                break;
+            case R.id.bSearch:
+                Intent searchIntent;
+                String name = eName.getText().toString();
+                String escapedQuery = null;
+                try {
+                    escapedQuery = URLEncoder.encode(name, "UTF-8");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+                Uri uri = Uri.parse("https://www.google.com/search?q=" + escapedQuery);
+                searchIntent = new Intent();
+                searchIntent.setAction(Intent.ACTION_VIEW);
+                searchIntent.setData(uri);
+                if (searchIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(searchIntent);
+                }
+                break;
         }
     }
 

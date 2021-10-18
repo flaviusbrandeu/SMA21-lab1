@@ -10,4 +10,6 @@
     <string name="tNameDefault">Hello there</string>
     <string name="bRandomText">Randomize</string>
     <string name="tSelectColorText">Select button text color</string>
+    <string name="bSearchText">Search</string>
+    <string name="bShareText">Share</string>
 </resources>
