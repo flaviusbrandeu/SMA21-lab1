@@ -12,4 +12,8 @@
     <string name="tSelectColorText">Select button text color</string>
     <string name="bSearchText">Search</string>
     <string name="bShareText">Share</string>
+    <string name="buttonAText">START A</string>
+    <string name="buttonBText">START B</string>
+    <string name="buttonCText">START C</string>
+    <string name="bActivityAText">Start Activity A</string>
 </resources>

@@ -15,6 +15,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.topindustries.lifecycle.ActivityA;
+
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.LinkedHashSet;
@@ -79,6 +81,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 if (searchIntent.resolveActivity(getPackageManager()) != null) {
                     startActivity(searchIntent);
                 }
+                break;
+            case R.id.bActivityA:
+                startActivity(new Intent(this, ActivityA.class));
                 break;
         }
     }
