@@ -7,7 +7,9 @@
         <entry key="app/src/main/res/layout/activity_activity.xml" value="0.15989583333333332" />
         <entry key="app/src/main/res/layout/activity_b.xml" value="0.32760416666666664" />
         <entry key="app/src/main/res/layout/activity_c.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_intent_filter.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_main_intent.xml" value="0.25" />
       </map>
     </option>
   </component>

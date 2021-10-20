@@ -20,6 +20,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloAndroid">
         <activity
+            android:name="com.topindustries.intents.IntentFilterActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="MSA.LAUNCH"/>
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:scheme="tel"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.topindustries.intents.MainIntentActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="com.topindustries.lifecycle.ActivityC"
             android:exported="true" />
         <activity
@@ -29,11 +50,7 @@
             android:name="com.topindustries.lifecycle.ActivityA"
             android:exported="true" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
